@@ -1,0 +1,28 @@
+{
+  "name": "logentries-stream",
+  "description": "A stream wrapper for logentries",
+  "tags": [
+    "stream",
+    "logentries"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Anton Whalley",
+    "email": "anton.whalley@nearform.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/No9/logentries-stream.git"
+  },
+  "bugs": {
+    "url": "https://github.com/No9/logentries-stream/issues"
+  },
+  "dependencies": {
+    "node-logentries": "0.0.2"
+  },
+  "devDependencies" : {
+    },
+    "scripts" : {
+        "test" : "node test/host.js"
+  }
+}
