@@ -1,7 +1,7 @@
 var Stream = require('stream').Stream;
 var logentries = require('node-logentries') 
 
-exports.log = function(token, level){
+module.exports = function(token, level){
 	var log = logentries.logger({
   		token: token
 	})
