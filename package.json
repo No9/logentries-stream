@@ -5,11 +5,12 @@
     "stream",
     "logentries"
   ],
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": {
     "name": "Anton Whalley",
     "email": "anton.whalley@nearform.com"
   },
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/No9/logentries-stream.git"
@@ -18,11 +19,10 @@
     "url": "https://github.com/No9/logentries-stream/issues"
   },
   "dependencies": {
-    "node-logentries": "0.0.2"
+    "le_node": "^1.0.6"
   },
-  "devDependencies" : {
-    },
-    "scripts" : {
-        "test" : "node test/host.js"
+  "devDependencies": {},
+  "scripts": {
+    "test": "node tests/host.js"
   }
 }

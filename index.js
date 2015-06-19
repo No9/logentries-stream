@@ -1,8 +1,8 @@
 var Stream = require('stream').Stream;
-var logentries = require('node-logentries') 
+var Logger = require('le_node') 
 
 module.exports = function(token, level){
-	var log = logentries.logger({
+	var log =  new Logger({
   		token: token
 	})
 
@@ -23,6 +23,10 @@ module.exports = function(token, level){
 	stream.destroy = function () {
 		stream.writable = false;
 	};
-
+	
+	log.on('error', function (err) {
+		stream.emit('error', err);
+	})
+	
 	return stream;
 }

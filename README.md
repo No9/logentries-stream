@@ -1,6 +1,7 @@
 # logentries-stream
 
-Stream interface for logentries 
+Simple Stream interface for logentries based on https://github.com/logentries/le_node
+Please see that project for account creation and configuration for log keys etc.
 
 ## Prerequisites
 [A logentries account](www.logentries.com)
@@ -12,27 +13,14 @@ npm install logentries-stream
 
 ## Usage 
 
-### Simple
-
 ```
-var logstream = require('logentries-stream')('LOGENTRIES_TOKEN', 'LOG_LEVEL');
+// Create a stream per log level
+var logstream = require('logentries-stream')('LOG_TOKEN', 'LOG_LEVEL');
+
 logstream.write('Hello World');
-```
 
-### With Bunyan
-
-```
-npm install bunyan
-npm install logentries-stream
-```
-
-Sample Code 
-
-```
-var Logger = require('bunyan');
-var loglevel = 'info';
-var logstream = require('logentries-stream')('LOGENTRIES_TOKEN', loglevel); 
-var log = new Logger({name: "myapp", stream: logstream, level: loglevel});
-
-log.info('bunyan FTW');        
+// Log to stderr in case of connection issues. 
+logtream.on('error', function(err) {
+	process.stderr(err)
+})
 ```
