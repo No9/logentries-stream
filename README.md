@@ -21,6 +21,6 @@ logstream.write('Hello World');
 
 // Log to stderr in case of connection issues. 
 logtream.on('error', function(err) {
-	process.stderr(err)
+	process.stderr.write(err)
 })
 ```
